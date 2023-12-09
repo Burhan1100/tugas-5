@@ -1,9 +1,9 @@
-# Binar: Challenge 04
+# tugas_5
 
 - Mulai modifikasi file `server/index.js` apabila ingin membuat HTTP server.
 - Mulai modifikasi folder `public` apabila ingin memodifikasi HTML.
 
-# `Binar` class
+# Tugas 5
 
 Class ini berisi 1 static method saja, yang berfungsi untuk mengambil data mobil dari internet.
 
