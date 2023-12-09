@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const strArray = ['burhan', 'selo', 'Rusdi'];
+        function forEacht(array, callback){
+            const newArray = [];
+            for(let i = 0; i< array.length; i++){
+                newArray.push(callback(array[i]));
+            }
+            return newArray;
+        }
+
+        const lenArray = forEacht(strArray ,(item)=>{
+            return item.length;
+        }); 
+        
+            console.log(lenArray);
+            //---------------------------------------------
+            //contah  pembuatan  class dan cara aksesnya
+
+            class Human{
+                //add static properti
+                        static islivein=true;
+                //add contructor method
+                constructor (name, address){
+                    this.name = name;
+                    this.address = address;
+                }
+
+                //add instance method signature
+                introduce(){
+                    console.log(`Hi, my name is ${this.name}`);
+                }
+            }
+            console.log(Human.islivein);
+            //output static roperti = true
+
+
+            //intalation of human Class, Create new Objec
+            let mj = new Human("Burhan","Bima");
+            console.log(mj);
+
+            //cheking istance of class
+            console.log(mj instanceof Human);
+            console.log(mj.introduce());
+
+            //add properti instan maehod
+            Human.prototype.greet = function (name){
+                console.log(`Hi, ${name}, i'm ${this.name}`);
+            }
+
+            //add static method
+            Human.destroy = function(thing){
+                console.log(`Human is destroying ${thing}`);
+            }
+
+            console.log(mj.greet("Donal Trump"));
+            console.log(Human.destroy("Amazon Forest"));
+            
+            //create chid kelas from Human
+            class Programing extends Human{
+                constructor(name, address, progLanguage){
+                    super(name,address);
+                    //call super/parent class contructor, in this case person.
+                    this.progLanguage = progLanguage;
+                }
+                //overide the intoduce method
+               /* introduce(){
+                super.introduce()
+                console.log(`I can write  :`,this.progLanguage);
+                } */
+                //overload
+                introduce(itsdetail){
+                    super.introduce();
+                    (Array.isArray(itsdetail))?
+                    console.log(`I can write :`,this.progLanguage): console.log("salah Input");
+                }
+                code(){
+                    console.log("Code Same", this.progLanguage[Math.floor(Math.random)*this.progLanguage.length]
+                    );
+                }
+            }
+
+            let Isayana = new Programing("Isana Abadi", "Lampung", ["javascrip", "Phyton", "HTML"]);
+            //overide the intoduce method
+           // Isayana.introduce();
+
+            //overload
+            Isayana.introduce(["javaScrip"]);
+            Isayana.code();
+//---------------------------------------------
+
+    </script>
+</body>
+</html>

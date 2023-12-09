@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Human{
+            
+            //add contructor method
+            constructor (name, address){
+                this.name = name;
+                this.address = address;
+            }
+
+            //add instance method signature
+            introduce(){
+                console.log(`Hello my name is ${this.name}`);
+            }
+            //this public ststic  method
+            static isEating(food){
+                let foods = ["animals", "plant"];
+                return foods.includes(food.toLowerCase());
+            }
+
+            //privat
+            #doGosip = () =>{
+                console.log(`my Address will  be  come viral ${this.address}`);
+            }
+
+            talk (){
+                console.log(this.#doGosip());
+            }
+            static #hideArea  = true;
+        }
+    
+
+        //intalation of human Class, Create new Objec
+        let mj = new Human("Burhan","Bima");
+        console.log(mj.talk());
+
+        //output
+        console.log(mj.introduce());
+        console.log(Human.isEating("animals"));
+        console.log(Human.isEating("Human"));
+
+    </script>
+</body>
+</html>

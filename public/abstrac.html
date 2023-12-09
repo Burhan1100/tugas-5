@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Human {
+            constructor(proops){
+                if(this.constructor === Human){
+                    throw new Error ("Can Not instatiate from Abstrac Class");
+                }
+                let {name, address} = proops;
+                this.name = name;
+                this.address = address;
+                this.prefisional = this.constructor.name;
+            }
+            work(){
+                console.log("Working........");
+            }
+            introduce(){
+                console.log(`Hello my name is ${this.name}`)
+            }
+        }
+
+        class Police extends Human {
+            constructor(proops){
+                super(proops);
+                this.rank = proops.rank; //add new properti rank
+            }
+            work(){
+                console.log("Go to the Police");
+                super.work();
+            }
+        }
+
+        const Wiranto = new Police({
+            name: "Wiranto", address: "Bima", rank: "General"
+        });
+        console.log(Wiranto.address);//police
+        
+
+    </script>
+</body>
+</html>

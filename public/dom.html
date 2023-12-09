@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar DOM</title>
+</head>
+<body>
+    <h1 id="title">Tulislah</h1>  
+<br>
+<br>
+<label for="">Ubah Teks</label>
+<input type="text" name="" id="text-item">
+
+<input type="color" name="" id="color-text">
+<label for="">BG</label>
+<input type="color" name="" id="color-piker">
+
+</body>
+<script>
+
+    const inputColorPiker = document.getElementById('color-piker');
+    inputColorPiker.addEventListener("change",(event)=>{
+        //console.log(event.target.value)  cek value nya
+        document.body.style.backgroundColor =event.target.value;
+    });
+
+    const titleElement = document.getElementById('title');
+    const inputTextItem = document.getElementById('text-item');
+    inputTextItem.addEventListener("change",(event)=>{
+        //console.log(event.target.value)  cek value nya
+    titleElement.innerText = event.target.value;
+    });
+
+    const inputColorText = document.getElementById('color-text');
+    inputColorText.addEventListener("change",(event)=>{
+       // console.log(event.target.value)  
+       titleElement.style.color = event.target.value;
+    });
+
+</script>
+</html>
